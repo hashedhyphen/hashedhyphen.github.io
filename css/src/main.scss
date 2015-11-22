@@ -1,0 +1,22 @@
+:root {
+  background-color: white;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 151px;
+    height: 151px;
+    transition: all 1s;
+  }
+}
