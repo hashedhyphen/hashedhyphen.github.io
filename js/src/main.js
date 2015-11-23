@@ -2,12 +2,14 @@
 
 document.addEventListener(`DOMContentLoaded`, (ev) => {
   const $$ = (selector) => document.querySelector(selector)
-      , rotate = (ev) => ev.target.style.transform = `rotate(360deg)`
-      , reset  = (ev) => ev.target.style.transform = `rotate(0deg)`
+      , converge = (ev) => {
+          ev.target.style.transform  = `rotate(360deg) scale(0, 0)`;
+        }
       ;
 
-  $$(`#logo`).style.transform = `rotate(0deg)`;
-  $$(`#logo`).addEventListener(`click`,         rotate, true);
-  $$(`#logo`).addEventListener(`touchstart`,    rotate, true);
-  $$(`#logo`).addEventListener(`transitionend`, reset,  true);
+  $$(`#logo`).addEventListener(`click`,      converge, true);
+  $$(`#logo`).addEventListener(`touchstart`, converge, true);
+  $$(`#logo`).addEventListener(`transitionend`, (ev) => {
+    location.href = "https://twitter.com/hashedhyphen";
+  },  true);
 });

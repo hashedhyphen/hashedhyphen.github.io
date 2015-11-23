@@ -1,2 +1,5 @@
 # npm modules
 node_modules/
+
+# temporary files
+slides/2015-11-22
